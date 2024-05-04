@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Material Clock</title>
+</head>
+
+<body>
+    <div id="clock" class="tab-pane active">
+      <div class="clock-display">
+        <div id="clock-time" class="digital-clock"></div>
+        <div id="clock-date" class="date"></div>
+      </div>
+    </div>
+
+    <div id="stopwatch" class="tab-pane">
+      <div class="stopwatch">
+        <div class="stopwatch-display">
+          <div id="stopwatch-time" class="digital-stopwatch">00:00:00.000</div>
+        </div>
+        <ul id="lap-list" class="lap-list"></ul>
+        <div class="stopwatch-controls">
+          <button id="start-button" onclick="toggleStopwatch()">Start</button>
+          <button id="reset-button" onclick="resetStopwatch()">Reset</button>
+          <button id="lap-button" onclick="recordLap()" style="display: none;">Lap</button>
+        </div>
+        
+      </div>
+    </div>
+
+    <div id="timer" class="tab-pane">
+      <div class="timer">
+        <div class="timer-display">
+          <span id="timer-time" class="digital-timer">00:00:00</span>
+        </div>
+         <div class="timer-dislay">
+          <div class="timer-controls">
+            <div class="timer-input">
+              <label for="hours-input">hrs:</label>
+              <input type="number" id="hours-input" min="0" value="0">
+            </div>
+            <div class="timer-input">
+              <label for="minutes-input">mins:</label>
+              <input type="number" id="minutes-input" min="0" value="0">
+            </div>
+            <div class="timer-input">
+              <label for="seconds-input">seconds:</label>
+              <input type="number" id="seconds-input" min="0" value="0">
+            </div>
+          </div>
+          <button id="start-timer-button" onclick="toggleTimer()">Start</button>
+          <button id="reset-timer-button" onclick="resetTimer()">Reset</button>
+        </div>
+        </div>
+      
+    </div>
+  </div>
+
+  <audio id="beep-sound">
+    <source src="../Moosedrilla.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <div class="tab-list">
+      <div class="tab active" onclick="switchTab(0)">Clock</div>
+      <div class="tab" onclick="switchTab(1)">Stopwatch</div>
+      <div class="tab" onclick="switchTab(2)">Timer</div>
+    </div>
+
+    
+  <script src="script.js"></script>
+</body>
+
+</html>
